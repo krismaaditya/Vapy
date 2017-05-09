@@ -31,10 +31,12 @@ public class SignupActivity extends AppCompatActivity implements AdapterView.OnI
     private Button signupSignupButton;
     //===================================//
 
+    public String url = "http://127.0.0.1/vapy/index.php/userapi/userid/2";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.scrollable_signup);
+        setContentView(R.layout.signup_layout);
 
         //=====================================================================//
         signupFullnameText = (EditText) findViewById(R.id.signupFullnameText);
@@ -50,22 +52,6 @@ public class SignupActivity extends AppCompatActivity implements AdapterView.OnI
 
         signupSignupButton = (Button) findViewById(R.id.signupSignupButton);
         //=====================================================================//
-
-        //set background rectangle yang dibuat di edittext_bg.xml
-        signupFullnameText.setBackgroundResource(R.drawable.edittext_bg);
-        signupNicknameText.setBackgroundResource(R.drawable.edittext_bg);
-        signupEmailText.setBackgroundResource(R.drawable.edittext_bg);
-        signupPasswordText.setBackgroundResource(R.drawable.edittext_bg);
-
-        /*tanggalSpinner.setBackgroundResource(R.drawable.edittext_bg);
-        bulanSpinner.setBackgroundResource(R.drawable.edittext_bg);
-        tahunSpinner.setBackgroundResource(R.drawable.edittext_bg);
-        genderSpinner.setBackgroundResource(R.drawable.edittext_bg);
-        kotaSpinner.setBackgroundResource(R.drawable.edittext_bg);*/
-
-        //cmykred button.xml untuk daftar button
-        signupSignupButton.setBackgroundResource(R.drawable.cmykred_button_bg);
-        //======================================================================//
 
         tanggalSpinner.setOnItemSelectedListener(this);
         bulanSpinner.setOnItemSelectedListener(this);
