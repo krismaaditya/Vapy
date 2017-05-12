@@ -7,9 +7,10 @@ import com.google.gson.annotations.SerializedName;
  * Created by KrismaAditya on 09/05/2017.
  */
 
-/*Class ini adalah class POJO yang digunakan untuk menerima data JSON
+/*Class ini adalah class POJO USER yang digunakan untuk menerima data JSON
     dari server*/
-public class User {
+public class UserData {
+
     @SerializedName("id")
     @Expose
     private String id;
@@ -35,7 +36,6 @@ public class User {
     @Expose
     private String password;
 
-    //SETTER DAN GETTER
     public String getId() {
         return id;
     }

@@ -15,21 +15,15 @@
         android:paddingTop="16dp"
         android:weightSum="1">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/vapy" />
-
         <TextView
-            android:id="@+id/fullnameTextView"
+            android:id="@+id/profilFullnameTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="Nama Lengkap" />
 
         <EditText
-            android:id="@+id/signupFullnameText"
+            android:id="@+id/profilFullnameText"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/edittext_bg"
@@ -38,14 +32,14 @@
             android:paddingLeft="10dp" />
 
         <TextView
-            android:id="@+id/nicknameTextView"
+            android:id="@+id/profilNicknameTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Nickname" />
 
         <EditText
-            android:id="@+id/signupNicknameText"
+            android:id="@+id/profilNicknameText"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/edittext_bg"
@@ -54,14 +48,14 @@
             android:paddingLeft="10dp" />
 
         <TextView
-            android:id="@+id/emailTextView"
+            android:id="@+id/profilEmailTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="E-mail" />
 
         <EditText
-            android:id="@+id/signupEmailText"
+            android:id="@+id/profilEmailText"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/edittext_bg"
@@ -70,7 +64,7 @@
             android:paddingLeft="10dp" />
 
         <TextView
-            android:id="@+id/tanggallahirTextView"
+            android:id="@+id/profilTanggallahirTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -89,91 +83,103 @@
                     android:id="@+id/profilHariTV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
+                    android:text="Tanggal"
                     android:layout_alignParentTop="true"
-                    android:text="Tanggal" />
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
 
                 <TextView
-                    android:id="@+id/bulanTextView"
+                    android:id="@+id/profilBulanTV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/bulanSpinner"
+                    android:layout_alignLeft="@+id/bulanText"
                     android:layout_alignParentTop="true"
-                    android:layout_alignStart="@+id/bulanSpinner"
+                    android:layout_alignStart="@+id/bulanText"
                     android:text="Bulan" />
 
                 <TextView
                     android:id="@+id/profilTahunTV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/tahunSpinner"
+                    android:text="Tahun"
                     android:layout_alignParentTop="true"
-                    android:layout_alignStart="@+id/tahunSpinner"
-                    android:text="Tahun" />
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
 
-                <Spinner
-                    android:id="@+id/tanggalSpinner"
-                    android:layout_width="70dp"
+                <EditText
+                    android:id="@+id/tahunText"
+                    android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
-                    android:layout_below="@+id/profilHariTV"
-                    android:layout_marginTop="15dp" />
+                    android:layout_below="@+id/profilTahunTV"
+                    android:background="@drawable/edittext_bg"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
 
-                <Spinner
-                    android:id="@+id/bulanSpinner"
-                    android:layout_width="150dp"
+                <EditText
+                    android:id="@+id/bulanText"
+                    android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_toEndOf="@+id/tanggalSpinner"
-                    android:layout_toRightOf="@+id/tanggalSpinner" />
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/edittext_bg"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
 
-                <Spinner
-                    android:id="@+id/tahunSpinner"
-                    android:layout_width="80dp"
+                <EditText
+                    android:id="@+id/tanggalText"
+                    android:layout_width="100dp"
                     android:layout_height="50dp"
+                    android:layout_alignParentBottom="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:layout_alignTop="@+id/bulanSpinner" />
+                    android:background="@drawable/edittext_bg"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
             </RelativeLayout>
         </LinearLayout>
 
         <TextView
-            android:id="@+id/genderTextView"
+            android:id="@+id/profilGenderTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Jenis Kelamin" />
 
-        <Spinner
-            android:id="@+id/genderSpinner"
+        <EditText
+            android:id="@+id/profilGenderText"
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="50dp"
+            android:background="@drawable/edittext_bg"
+            android:ems="10"
+            android:inputType="textPersonName" />
 
         <TextView
-            android:id="@+id/kotaTextView"
+            android:id="@+id/profilKotaTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Kota" />
 
-        <Spinner
-            android:id="@+id/kotaSpinner"
+        <EditText
+            android:id="@+id/profilKotaText"
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="50dp"
+            android:background="@drawable/edittext_bg"
+            android:ems="10"
+            android:inputType="textPersonName" />
 
         <TextView
-            android:id="@+id/passwordTextView"
+            android:id="@+id/profilPasswordTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="password" />
 
         <EditText
-            android:id="@+id/signupPasswordText"
+            android:id="@+id/profilPasswordText"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/edittext_bg"
@@ -182,12 +188,12 @@
             android:paddingLeft="10dp" />
 
         <Button
-            android:id="@+id/signupSignupButton"
+            android:id="@+id/profilEditButton"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/cmykred_button_bg"
-            android:text="DAFTAR"
+            android:text="edit"
             android:textColor="@android:color/white" />
 
     </LinearLayout>

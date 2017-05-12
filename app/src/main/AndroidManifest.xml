@@ -10,7 +10,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
+
+        <activity
+            android:name=".MenuActivity"
+            android:label="Vapy">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,9 +21,22 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".SignupActivity"/>
+        <activity
+            android:name=".LoginActivity"
+            android:label="Login">
+            </activity>
 
-        <activity android:name=".MenuActivity"/>
+        <activity
+            android:name=".SignupActivity"
+            android:label="Daftar">
+            </activity>
+
+        <activity
+            android:name=".ProfileActivity"
+            android:label="Profil">
+        </activity>
+
+
 
     </application>
 
