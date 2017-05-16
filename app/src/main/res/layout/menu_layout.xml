@@ -70,13 +70,4 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
-    <Button
-        android:id="@+id/exitButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/accountImageButton"
-        android:layout_alignRight="@+id/accountImageButton"
-        android:layout_alignTop="@+id/logoutButton"
-        android:text="EXIT" />
-
 </RelativeLayout>

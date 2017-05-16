@@ -33,7 +33,6 @@ public class LoginActivity extends AppCompatActivity {
     private EditText loginPasswordText;
     private Button loginButton;
     private Button signupButton;
-    private TextView belumpunyaakunText;
 
     //alert untuk error handling username dan password
     //AlertDialog alert = new AlertDialog.Builder(LoginActivity.this).create();
@@ -55,7 +54,6 @@ public class LoginActivity extends AppCompatActivity {
         loginPasswordText = (EditText) findViewById(R.id.loginPasswordText);
         loginButton = (Button) findViewById(R.id.loginButton);
         signupButton = (Button) findViewById(R.id.signupButton);
-        belumpunyaakunText = (TextView) findViewById(R.id.belumpunyaakunText);
 
         Toast.makeText(getApplicationContext(),"STATUS : " + session.isOnline(), Toast.LENGTH_LONG).show();
 
@@ -71,8 +69,8 @@ public class LoginActivity extends AppCompatActivity {
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*Intent intent = new Intent(LoginActivity.this , SignupActivity.class);
-                startActivity(intent);*/
+                Intent signupIntent = new Intent(LoginActivity.this , SignupActivity.class);
+                startActivity(signupIntent);
             }
         });
     }
@@ -92,7 +90,7 @@ public class LoginActivity extends AppCompatActivity {
 
         //call getUser berdasarkan nickname (variable ncknm)
         //methodnya GET
-        Call<UserResponse> call = service.getUser(ncknm);
+        //Call<UserResponse> call = service.getUser(ncknm);
 
         //method POST
         Call<UserResponse> loginCall = service.loginUser(ncknm, pswrd);
@@ -106,8 +104,8 @@ public class LoginActivity extends AppCompatActivity {
                     //status & message
                     String status = response.body().getStatus().toString();
                     String message = response.body().getMessage().toString();
-
-                    //data
+                    
+                    String user_id = response.body().getData().getId().toString();
                     String fullname = response.body().getData().getFullname().toString();
                     String nickname = response.body().getData().getNickname().toString();
                     String email = response.body().getData().getEmail().toString();
@@ -116,7 +114,10 @@ public class LoginActivity extends AppCompatActivity {
                     String kota = response.body().getData().getKota().toString();
                     String password = response.body().getData().getPassword().toString();
 
+                    Toast.makeText(LoginActivity.this, "BERHASIL TERIMA RESPON",Toast.LENGTH_LONG).show();
+
                     Toast.makeText(LoginActivity.this, "Status : "+status
+                            +"\n User_ID : "+user_id
                             +"\n Message : "+message
                             +"\n Fullname : "+fullname
                             +"\n Nickname : "+nickname
@@ -126,7 +127,7 @@ public class LoginActivity extends AppCompatActivity {
                             +"\n Kota : "+kota, Toast.LENGTH_LONG).show();
                     //belumpunyaakunText.setText(password);
 
-                    session.login_session(fullname, nickname, email, birthdate, gender, kota, pswrd);
+                    session.login_session(user_id, fullname, nickname, email, birthdate, gender, kota, pswrd);
 
                     Intent menuIntent = new Intent(getApplicationContext() , MenuActivity.class);
                     startActivity(menuIntent);
@@ -143,6 +144,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<UserResponse> call, Throwable t) {
                 Log.d("onFailure", t.toString());
+                Toast.makeText(LoginActivity.this, "GAGAL TERIMA RESPON",Toast.LENGTH_LONG).show();
             }
         });
     }

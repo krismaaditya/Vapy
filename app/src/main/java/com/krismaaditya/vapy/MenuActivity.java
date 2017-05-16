@@ -1,12 +1,8 @@
 package com.krismaaditya.vapy;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -22,6 +18,7 @@ public class MenuActivity extends AppCompatActivity {
     private Button logoutButton;
     private ImageButton accountImageButton;
     private ImageButton chatImageButton;
+    private ImageButton diskusiImageButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +27,8 @@ public class MenuActivity extends AppCompatActivity {
 
         logoutButton = (Button)findViewById(R.id.logoutButton);
         accountImageButton = (ImageButton)findViewById(R.id.accountImageButton);
+        chatImageButton = (ImageButton)findViewById(R.id.chatImageButton);
+        diskusiImageButton = (ImageButton)findViewById(R.id.diskusiImageButton);
 
         session = new Session(getApplicationContext());
 
@@ -43,6 +42,22 @@ public class MenuActivity extends AppCompatActivity {
         }
 
         Toast.makeText(getApplicationContext(), "STATUS : " + session.isOnline(), Toast.LENGTH_LONG).show();
+
+        diskusiImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent diskusi = new Intent(MenuActivity.this, DiskusiActivity.class);
+                startActivity(diskusi);
+            }
+        });
+
+        chatImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent activeChat = new Intent(MenuActivity.this, ChatsActivity0.class);
+                startActivity(activeChat);
+            }
+        });
 
         //tombol accountImageButton dipencet
         accountImageButton.setOnClickListener(new View.OnClickListener() {
@@ -58,6 +73,7 @@ public class MenuActivity extends AppCompatActivity {
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //logout
                 session.logout();
                 //ketika tombol logout dipencet,
                 //MenuActivity di-terminate

@@ -26,6 +26,7 @@ public class Session {
 
     //Keys-keys nya
     public static final String is_online = "isonlineKey";
+    public static final String userIDKey = "userIDKey";
     public static final String fullnameKey = "fullnameKey";
     public static final String nicknameKey = "nicknameKey";
     public static final String emailKey = "emailKey";
@@ -43,10 +44,12 @@ public class Session {
         editor = sp.edit();
     }
 
-    public void login_session(String fullname, String nickname, String email, String birthdate, String gender,
+    public void login_session(String userid, String fullname, String nickname, String email, String birthdate, String gender,
                       String kota, String password)
     {
         editor.putBoolean(is_online, true);
+
+        editor.putString(userIDKey, userid);
         editor.putString(fullnameKey, fullname);
         editor.putString(nicknameKey, nickname);
         editor.putString(emailKey, email);
@@ -61,7 +64,13 @@ public class Session {
     {
         HashMap<String, String> user = new HashMap<String, String>();
 
+        user.put(userIDKey, sp.getString(userIDKey,null));
+        user.put(fullnameKey, sp.getString(fullnameKey, null));
         user.put(nicknameKey, sp.getString(nicknameKey, null));
+        user.put(emailKey, sp.getString(emailKey,null));
+        user.put(birthdateKey, sp.getString(birthdateKey,null));
+        user.put(genderKey, sp.getString(genderKey,null));
+        user.put(kotaKey, sp.getString(kotaKey,null));
         user.put(passwordKey, sp.getString(passwordKey, null));
 
         return user;

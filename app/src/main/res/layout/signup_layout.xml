@@ -70,76 +70,21 @@
             android:paddingLeft="10dp" />
 
         <TextView
-            android:id="@+id/tanggallahirTextView"
+            android:id="@+id/signupBirthdateTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Tanggal Lahir" />
+            android:text="Tanggal Lahir (FORMAT : YYYY-MM-DD)" />
 
-        <LinearLayout
+        <EditText
+            android:id="@+id/signupBirthdateText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/profilHariTV"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:text="Tanggal" />
-
-                <TextView
-                    android:id="@+id/bulanTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/bulanSpinner"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignStart="@+id/bulanSpinner"
-                    android:text="Bulan" />
-
-                <TextView
-                    android:id="@+id/profilTahunTV"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/tahunSpinner"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignStart="@+id/tahunSpinner"
-                    android:text="Tahun" />
-
-                <Spinner
-                    android:id="@+id/tanggalSpinner"
-                    android:layout_width="70dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_below="@+id/profilHariTV"
-                    android:layout_marginTop="15dp" />
-
-                <Spinner
-                    android:id="@+id/bulanSpinner"
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_toEndOf="@+id/tanggalSpinner"
-                    android:layout_toRightOf="@+id/tanggalSpinner" />
-
-                <Spinner
-                    android:id="@+id/tahunSpinner"
-                    android:layout_width="80dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignTop="@+id/bulanSpinner" />
-            </RelativeLayout>
-        </LinearLayout>
+            android:layout_height="50dp"
+            android:background="@drawable/edittext_bg"
+            android:ems="10"
+            android:hint="YYYY-MM-DD"
+            android:inputType="date"
+            android:paddingLeft="10dp" />
 
         <TextView
             android:id="@+id/genderTextView"
@@ -151,7 +96,8 @@
         <Spinner
             android:id="@+id/genderSpinner"
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="50dp"
+            android:background="@drawable/edittext_bg" />
 
         <TextView
             android:id="@+id/kotaTextView"
@@ -189,6 +135,13 @@
             android:background="@drawable/cmykred_button_bg"
             android:text="DAFTAR"
             android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Terms of Service" />
 
     </LinearLayout>
 </ScrollView>

@@ -70,6 +70,15 @@
             android:layout_marginTop="10dp"
             android:text="Tanggal Lahir" />
 
+        <EditText
+            android:id="@+id/profiltanggalLahirText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/edittext_bg"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="10dp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -78,65 +87,6 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/profilHariTV"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tanggal"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true" />
-
-                <TextView
-                    android:id="@+id/profilBulanTV"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/bulanText"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignStart="@+id/bulanText"
-                    android:text="Bulan" />
-
-                <TextView
-                    android:id="@+id/profilTahunTV"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tahun"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
-
-                <EditText
-                    android:id="@+id/tahunText"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_below="@+id/profilTahunTV"
-                    android:background="@drawable/edittext_bg"
-                    android:ems="10"
-                    android:inputType="textPersonName" />
-
-                <EditText
-                    android:id="@+id/bulanText"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:background="@drawable/edittext_bg"
-                    android:ems="10"
-                    android:inputType="textPersonName" />
-
-                <EditText
-                    android:id="@+id/tanggalText"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:background="@drawable/edittext_bg"
-                    android:ems="10"
-                    android:inputType="textPersonName" />
 
             </RelativeLayout>
         </LinearLayout>
@@ -154,7 +104,8 @@
             android:layout_height="50dp"
             android:background="@drawable/edittext_bg"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:paddingLeft="10dp" />
 
         <TextView
             android:id="@+id/profilKotaTV"
@@ -169,7 +120,8 @@
             android:layout_height="50dp"
             android:background="@drawable/edittext_bg"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:paddingLeft="10dp" />
 
         <TextView
             android:id="@+id/profilPasswordTV"

@@ -36,7 +36,35 @@
             android:label="Profil">
         </activity>
 
+        <activity
+            android:name=".ChatsActivity"
+            android:label="Chats">
+        </activity>
 
+        <activity
+            android:name=".ChatsActivity0"
+            android:label="Chats">
+        </activity>
+
+        <activity
+            android:name=".AllUsersActivity"
+            android:label="Users">
+        </activity>
+
+        <activity
+            android:name=".ChattingActivity"
+            android:label="Chatting">
+        </activity>
+
+        <activity
+            android:name=".DiskusiActivity"
+            android:label="Diskusi">
+        </activity>
+
+        <activity
+            android:name=".AddDiskusiActivity"
+            android:label="Tambah Diskusi">
+        </activity>
 
     </application>
 
