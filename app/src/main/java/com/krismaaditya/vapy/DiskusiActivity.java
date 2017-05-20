@@ -37,13 +37,22 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class DiskusiActivity extends AppCompatActivity {
     public String url = "http://10.0.2.2/vapy/index.php/";
+
+    //login session
     Session session;
+
+    //diskusi session
+    DiskusiSession diskusisession;
 
     RecyclerView recyclerView;
     private DiskusiAdapter adapter;
     //user ID ini milik yang SAAT INI LOGIN
     public String user_id;
+
+    //jumlah diskusi
+    private int jumlahDiskusi;
     private FloatingActionButton addDiskusiButton;
+    private FloatingActionButton diskusiRefreshButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,16 +65,24 @@ public class DiskusiActivity extends AppCompatActivity {
         user_id = user.get(Session.userIDKey);
         //===============================================//
 
+        //Diskusi session
+        diskusisession = new DiskusiSession(getApplicationContext());
+        //============================================================//
+
         recyclerView = (RecyclerView) findViewById(R.id.diskusiRV);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         addDiskusiButton = (FloatingActionButton)findViewById(R.id.addDiskusiButton);
+        diskusiRefreshButton = (FloatingActionButton)findViewById(R.id.diskusiRefreshButton);
 
         adapter = new DiskusiAdapter(this, new ArrayList<DiskusiData>(0), new DiskusiAdapter.ItemListener()
         {
             @Override
             public void onPostClick(String id) {
                 Toast.makeText(DiskusiActivity.this, "Diskusi ID : "+id,Toast.LENGTH_LONG).show();
+                Intent comment = new Intent(DiskusiActivity.this, KomentarDiskusiActivity.class);
+                startActivity(comment);
+                diskusisession.diskusi_session(id);
             }
         });
 
@@ -85,6 +102,13 @@ public class DiskusiActivity extends AppCompatActivity {
                 startActivity(addDiskusi);
             }
         });
+
+        diskusiRefreshButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getDiskusi();
+            }
+        });
     }
 
     public void getDiskusi()
@@ -100,11 +124,17 @@ public class DiskusiActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<DiskusiResponse> call, Response<DiskusiResponse> response) {
                 Toast.makeText(DiskusiActivity.this, "BERHASIL TERIMA RESPON",Toast.LENGTH_LONG).show();
+                Toast.makeText(DiskusiActivity.this, "Silahkan Klik pada postingan untuk komentar...",Toast.LENGTH_LONG).show();
                 try {
                     String code = response.body().getStatus().toString();
                     String message = response.body().getMessage().toString();
 
-                    List<DiskusiData> data = response.body().getData();
+                    //hitung jumlah diskusi
+                    jumlahDiskusi = adapter.getItemCount();
+                    //convert ke String
+                    String jumlahDisk = String.valueOf(jumlahDiskusi);
+
+                    DiskusiActivity.this.setTitle("Diskusi ("+jumlahDisk+")");
 
                     adapter.updateList(response.body().getData());
                 }

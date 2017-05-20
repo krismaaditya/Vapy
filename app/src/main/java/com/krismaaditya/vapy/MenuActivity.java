@@ -1,7 +1,10 @@
 package com.krismaaditya.vapy;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +22,7 @@ public class MenuActivity extends AppCompatActivity {
     private ImageButton accountImageButton;
     private ImageButton chatImageButton;
     private ImageButton diskusiImageButton;
+    private ImageButton marketImageButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +33,7 @@ public class MenuActivity extends AppCompatActivity {
         accountImageButton = (ImageButton)findViewById(R.id.accountImageButton);
         chatImageButton = (ImageButton)findViewById(R.id.chatImageButton);
         diskusiImageButton = (ImageButton)findViewById(R.id.diskusiImageButton);
+        marketImageButton = (ImageButton)findViewById(R.id.marketImageButton);
 
         session = new Session(getApplicationContext());
 
@@ -65,6 +70,24 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent profil = new Intent(MenuActivity.this, ProfileActivity.class);
                 startActivity(profil);
+            }
+        });
+
+        marketImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Fitur market belum tersedia :(
+                AlertDialog aD = new AlertDialog.Builder(MenuActivity.this).create();
+                aD.setTitle("Market");
+                aD.setMessage("Maaf, fitur Market belum tersedia saat ini :(");
+                aD.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.dismiss();
+                            }
+                        });
+                aD.show();
             }
         });
 

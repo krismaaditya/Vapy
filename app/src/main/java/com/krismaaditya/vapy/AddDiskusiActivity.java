@@ -97,7 +97,7 @@ public class AddDiskusiActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<DiskusiResponse> call, Throwable t) {
                 Log.d("onFailure", t.toString());
-                Toast.makeText(AddDiskusiActivity.this, "GAGAL TERIMA RESPON",Toast.LENGTH_LONG).show();
+                //Toast.makeText(AddDiskusiActivity.this, "GAGAL TERIMA RESPON",Toast.LENGTH_LONG).show();
                 finish();
             }
         });

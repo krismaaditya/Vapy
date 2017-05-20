@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.krismaaditya.vapy">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -10,7 +10,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".MenuActivity"
             android:label="Vapy">
@@ -23,49 +22,43 @@
 
         <activity
             android:name=".LoginActivity"
-            android:label="Login">
-            </activity>
+            android:label="Login" />
 
         <activity
             android:name=".SignupActivity"
-            android:label="Daftar">
-            </activity>
+            android:label="Daftar" />
 
         <activity
             android:name=".ProfileActivity"
-            android:label="Profil">
-        </activity>
+            android:label="Profil" />
 
         <activity
             android:name=".ChatsActivity"
-            android:label="Chats">
-        </activity>
+            android:label="Chats" />
 
         <activity
             android:name=".ChatsActivity0"
-            android:label="Chats">
-        </activity>
+            android:label="Chats" />
 
         <activity
             android:name=".AllUsersActivity"
-            android:label="Users">
-        </activity>
+            android:label="Users" />
 
         <activity
             android:name=".ChattingActivity"
-            android:label="Chatting">
-        </activity>
+            android:label="Chatting" />
 
         <activity
             android:name=".DiskusiActivity"
-            android:label="Diskusi">
-        </activity>
+            android:label="Diskusi" />
 
         <activity
             android:name=".AddDiskusiActivity"
-            android:label="Tambah Diskusi">
-        </activity>
+            android:label="Tambah Diskusi" />
 
+        <activity
+            android:name=".KomentarDiskusiActivity"
+            android:label="Komentar" />
     </application>
 
 </manifest>

@@ -29,7 +29,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:background="@drawable/edittext_bg"
-            app:srcCompat="@drawable/vapy_ic_launcher" />
+            app:srcCompat="@drawable/vapy_discussion_logo" />
 
         <TextView
             android:id="@+id/judulTV"
@@ -42,7 +42,7 @@
             android:text="JUDUL" />
 
         <TextView
-            android:id="@+id/olehTV"
+            android:id="@+id/komentatorTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"

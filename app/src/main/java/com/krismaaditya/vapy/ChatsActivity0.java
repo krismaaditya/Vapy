@@ -45,6 +45,7 @@ public class ChatsActivity0 extends AppCompatActivity {
     public String url = "http://10.0.2.2/vapy/index.php/";
     private ChatsAdapter0 adapter;
     private FloatingActionButton addChatButton;
+    private FloatingActionButton activechatRefreshButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +63,8 @@ public class ChatsActivity0 extends AppCompatActivity {
 
         recyclerView = (RecyclerView) findViewById(R.id.activeChatRecyclerView);
         addChatButton = (FloatingActionButton) findViewById(R.id.addChatButton);
+        activechatRefreshButton = (FloatingActionButton) findViewById(R.id.activechatRefreshButton);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         adapter = new ChatsAdapter0(this, new ArrayList<ActiveChatData>(0), new ChatsAdapter0.ItemListener()
@@ -92,6 +95,13 @@ public class ChatsActivity0 extends AppCompatActivity {
             public void onClick(View view) {
                 Intent addChat = new Intent(ChatsActivity0.this, AllUsersActivity.class);
                 startActivity(addChat);
+            }
+        });
+
+        activechatRefreshButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getChats();
             }
         });
 

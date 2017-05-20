@@ -40,6 +40,7 @@ public class LoginActivity extends AppCompatActivity {
     //class session untuk menghandle session
     Session session;
 
+    //alamat localhost
     public String url = "http://10.0.2.2/vapy/index.php/";
 
     @Override

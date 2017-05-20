@@ -2,19 +2,15 @@ package com.krismaaditya.vapy;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.krismaaditya.vapy.adapter.ChattingAdapter;
-import com.krismaaditya.vapy.model.IsiChat;
 import com.krismaaditya.vapy.model.IsiChatResponse;
 import com.krismaaditya.vapy.model.LihatIsiChat;
 import com.krismaaditya.vapy.model.LihatIsiChatResponse;
@@ -65,8 +61,8 @@ public class ChattingActivity extends AppCompatActivity {
         HashMap<String, String> pesan = chatSession.getChat();
         chat_id = pesan.get(ChatSession.chatIDKey);
         //======================================================//
-        inputPesan = (EditText)findViewById(R.id.inputPesan);
-        sendButton = (Button)findViewById(R.id.sendButton);
+        inputPesan = (EditText)findViewById(R.id.inputKomentar);
+        sendButton = (Button)findViewById(R.id.sendKomentarButton);
 
         recyclerView = (RecyclerView)findViewById(R.id.listPesan);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -114,7 +110,7 @@ public class ChattingActivity extends AppCompatActivity {
         isiChat.enqueue(new Callback<IsiChatResponse>() {
             @Override
             public void onResponse(Call<IsiChatResponse> call, Response<IsiChatResponse> response) {
-                try
+                /*try
                 {
                     Toast.makeText(ChattingActivity.this, "BERHASIL SUBMIT CHAT",Toast.LENGTH_LONG).show();
                 }
@@ -122,13 +118,13 @@ public class ChattingActivity extends AppCompatActivity {
                 {
                     Log.d("onResponse","ERROR!");
                     e.printStackTrace();
-                }
+                }*/
             }
 
             @Override
             public void onFailure(Call<IsiChatResponse> call, Throwable t) {
                 Log.d("onFailure", t.toString());
-                Toast.makeText(ChattingActivity.this, "GAGAL SUBMIT CHAT",Toast.LENGTH_LONG).show();
+                //Toast.makeText(ChattingActivity.this, "GAGAL SUBMIT CHAT",Toast.LENGTH_LONG).show();
                 inputPesan.setText("");
             }
         });
@@ -149,10 +145,9 @@ public class ChattingActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<LihatIsiChatResponse> call, Response<LihatIsiChatResponse> response) {
                 try {
-                    List<LihatIsiChat> pesan = response.body().getData();
 
                     adapter.updateList(response.body().getData());
-                    Toast.makeText(ChattingActivity.this, "BERHASIL LOAD ISI CHAT",Toast.LENGTH_LONG).show();
+                    //Toast.makeText(ChattingActivity.this, "BERHASIL LOAD ISI CHAT",Toast.LENGTH_LONG).show();
 
                 }
                 catch (Exception e)
@@ -165,7 +160,7 @@ public class ChattingActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<LihatIsiChatResponse> call, Throwable t) {
                 Log.d("onFailure", t.toString());
-                Toast.makeText(ChattingActivity.this, "GAGAL LOAD ISI CHAT",Toast.LENGTH_LONG).show();
+                //Toast.makeText(ChattingActivity.this, "GAGAL LOAD ISI CHAT",Toast.LENGTH_LONG).show();
             }
         });
     }

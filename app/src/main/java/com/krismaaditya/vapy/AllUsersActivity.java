@@ -156,7 +156,7 @@ public class AllUsersActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<ActiveChatResponse> call, Throwable t) {
                 Log.d("onFailure", t.toString());
-                Toast.makeText(AllUsersActivity.this, "GAGAL TERIMA RESPON",Toast.LENGTH_LONG).show();
+                //Toast.makeText(AllUsersActivity.this, "GAGAL TERIMA RESPON",Toast.LENGTH_LONG).show();
             }
         });
     }

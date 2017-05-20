@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import com.krismaaditya.vapy.R;
 import com.krismaaditya.vapy.model.DiskusiData;
-import com.krismaaditya.vapy.model.UsersData;
 
 import java.util.List;
 
@@ -35,7 +34,7 @@ public class DiskusiAdapter extends RecyclerView.Adapter<DiskusiAdapter.DiskusiV
             super(view);
             judulTV = (TextView) view.findViewById(R.id.judulTV);
             isiTV = (TextView) view.findViewById(R.id.isiTV);
-            olehTV = (TextView) view.findViewById(R.id.olehTV);
+            olehTV = (TextView) view.findViewById(R.id.komentatorTV);
             this.useritemlListener = clickItemListener;
             view.setOnClickListener(this);
         }

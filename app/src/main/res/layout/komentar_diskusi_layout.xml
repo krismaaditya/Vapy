@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
@@ -11,16 +12,28 @@
         android:orientation="vertical"
         android:padding="10dp">
 
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/komentarRefreshButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:clickable="true"
+            app:backgroundTint="@color/colorPrimary"
+            app:fabSize="mini"
+            app:srcCompat="@drawable/ic_refresh" />
+
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/listPesan"
+            android:id="@+id/listKomentar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@+id/inputKomentar"
             android:layout_alignParentLeft="false"
             android:layout_alignParentTop="false"
             android:layout_below="@+id/meLbl"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="50dp"
             android:divider="@null"
             android:listSelector="@android:color/transparent"
             android:transcriptMode="alwaysScroll" />
@@ -34,7 +47,7 @@
             android:layout_toLeftOf="@+id/sendKomentarButton"
             android:layout_weight="0.7"
             android:background="@drawable/edittext_bg"
-            android:hint="tulis pesan..."
+            android:hint="tulis komentar..."
             android:paddingLeft="10dp" />
 
         <Button
